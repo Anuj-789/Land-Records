@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>गांव अनुसार खोज</title>
+
+<style>
+/* Google Font (Optional but Recommended) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#141e30,#243b55);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:15px;
+}
+
+/* Glass Container */
+.container{
+    width:100%;
+    max-width:650px;
+    background:rgba(255,255,255,0.95);
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    backdrop-filter:blur(10px);
+    animation:fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+h2{
+    text-align:center;
+    color:#243b55;
+    margin-bottom:20px;
+    font-size:22px;
+}
+
+/* Village Button */
+.village{
+    background:#f2f4f8;
+    padding:15px;
+    margin:10px 0;
+    border-radius:14px;
+    cursor:pointer;
+    font-weight:600;
+    transition:all 0.3s ease;
+    font-size:16px;
+}
+
+.village:hover{
+    background:#243b55;
+    color:white;
+    transform:scale(1.02);
+}
+
+/* Name List */
+.name-list{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease;
+    padding-left:10px;
+}
+
+.name{
+    padding:10px;
+    margin:6px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:all 0.2s ease;
+    font-size:15px;
+}
+
+.name:hover{
+    background:#9daee5;
+    transform:translateX(5px);
+}
+
+.selected{
+    background:#223b59;
+    color:rgb(255, 255, 255);
+     font-weight:600;
+}
+
+/* Search Button */
+.search-btn{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(to right,#141e30,#243b55);
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    opacity:0.5;
+}
+
+.search-btn.active{
+    opacity:1;
+    transform:scale(1.03);
+}
+
+.search-btn:disabled{
+    cursor:not-allowed;
+}
+
+/* 🔥 Responsive Tweaks */
+@media(max-width:480px){
+
+    .container{
+        padding:18px;
+        border-radius:15px;
+    }
+
+    h2{
+        font-size:18px;
+    }
+
+    .village{
+        font-size:15px;
+        padding:13px;
+    }
+
+    .name{
+        font-size:14px;
+        padding:8px;
+    }
+
+    .search-btn{
+        font-size:15px;
+        padding:13px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>Land Records </h2>
+
+<!-- रामनगर -->
+<div class="village">रामनगर</div>
+<div class="name-list">
+    <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=19&m=600&v=1%20%20%20%20%20%20%20%20%20&p=494&k=0">Baaldev Gupta</div>
+    <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=19&m=600&v=7%20%20%20%20%20%20%20%20%20&p=1923&k=22">Mahesh Ram</div>
+     <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=19&m=600&v=7%20%20%20%20%20%20%20%20%20&p=1808&k=0">Mahesh Ram</div>
+    <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=19&m=600&v=2%20%20%20%20%20%20%20%20%20&p=1110&k=0">Mahesh Ram</div>
+     <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=19&m=600&v=2%20%20%20%20%20%20%20%20%20&p=941&k=0">Mahesh Ram</div>
+    <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=19&m=600&v=3%20%20%20%20%20%20%20%20%20&p=361&k=0">Mahesh Ram</div>
+     <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=19&m=600&v=1%20%20%20%20%20%20%20%20%20&p=334&k=0">Mahesh Ram</div>
+</div>
+
+<!-- बहुआरी -->
+<div class="village">बहुअरी</div>
+<div class="name-list">
+    <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=19&m=618&v=1%20%20%20%20%20%20%20%20%20&p=808&k=0">Mahesh ram</div>
+    <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=19&m=618&v=1%20%20%20%20%20%20%20%20%20&p=807&k=20">Mahesh ram</div>
+     <div class="name" data-link="https://parimarjan.bihar.gov.in/BiharBhumiReport/Reg2Report?d=27&c=14&s=01&h=19&m=618&v=1+++++++++&p=657&k=104&u=211101400072827">Hanuman Baniya</div>
+</div>
+
+<!-- बेलटांडी -->
+<div class="village">बेलटांडी</div>
+<div class="name-list">
+    <div class="name" data-link="https://parimarjan.bihar.gov.in/BiharBhumiReport/Reg2Report?d=27&c=14&s=01&h=2&m=521&v=1+++++++++&p=77&k=15&u=211101400040491">Mahesh Ram</div>
+</div>
+
+<!-- रतनपुरवा -->
+<div class="village">रतनपुरवा</div>
+<div class="name-list">
+    <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=19&m=599&v=6&p=17&k=59">Anand Kumar Gupta</div>
+</div>
+
+<!-- मुदिला -->
+<div class="village">मुडिला</div>
+<div class="name-list">
+    <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=19&m=620&v=17&p=54&k=61">Anand Kumar Gupta</div>
+</div>
+
+<!-- सोनखर -->
+<div class="village">सोनखर</div>
+<div class="name-list">
+    <div class="name" data-link="https://parimarjan.bihar.gov.in/BiharBhumiReport/Reg2Report?d=27&c=14&s=01&h=16&m=637&v=2+++++++++&p=1010&k=10&u=211101400084901">Anand Kumar Gupta</div>
+</div>
+
+<!-- रुपवलिया -->
+<div class="village">रुपवलिया</div>
+<div class="name-list">
+    <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=2&m=523&v=1%20%20%20%20%20%20%20%20%20&p=77&k=0">Mahesh ram</div>
+    <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=2&m=523&v=1%20%20%20%20%20%20%20%20%20&p=8&k=0">baaldev Gupta</div>
+</div>
+
+
+
+<!-- नौरंगिया -->
+<div class="village">नौरंगिया</div>
+<div class="name-list">
+    <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=1&m=512&v=1%20%20%20%20%20%20%20%20%20&p=1038&k=42">Rangnath</div>
+</div>
+
+<div class="village">नरैनापुर</div>
+<div class="name-list">
+    <div class="name" data-link="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransReg2Report.aspx?d=27&c=14&s=01&h=19&m=619&v=1%20%20%20%20%20%20%20%20%20&p=831&k=0">Mahesh Ram</div>
+</div>
+
+<button class="search-btn" id="searchBtn" disabled>खोजें</button>
+
+</div>
+
+<script>
+const villages = document.querySelectorAll(".village");
+const nameLists = document.querySelectorAll(".name-list");
+const names = document.querySelectorAll(".name");
+const searchBtn = document.getElementById("searchBtn");
+
+let selectedLink = null;
+
+// Improved Smooth Toggle
+villages.forEach((village, index) => {
+    village.addEventListener("click", () => {
+
+        villages.forEach(v => v.classList.remove("active"));
+        village.classList.add("active");
+
+        nameLists.forEach((list, i) => {
+            if(i === index){
+                if(list.style.maxHeight){
+                    list.style.maxHeight = null;
+                    list.classList.remove("show");
+                } else {
+                    list.style.maxHeight = list.scrollHeight + "px";
+                    list.classList.add("show");
+                }
+            } else {
+                list.style.maxHeight = null;
+                list.classList.remove("show");
+            }
+        });
+
+    });
+});
+
+// Name Select
+names.forEach(name => {
+    name.addEventListener("click", function(){
+        names.forEach(n => n.classList.remove("selected"));
+        this.classList.add("selected");
+        selectedLink = this.dataset.link;
+        searchBtn.disabled = false;
+        searchBtn.classList.add("active");
+    });
+});
+
+// Open in New Tab (Improvement 1)
+searchBtn.addEventListener("click", () => {
+    if(selectedLink){
+        window.open(selectedLink, "_blank");
+    }
+});
+</script>
+
+</body>
+</html>
